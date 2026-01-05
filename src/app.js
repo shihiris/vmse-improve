@@ -29,7 +29,21 @@ const HomeSection = () => (
                     </div>
                 </div>
                 <div className="relative w-full aspect-video rounded-xl overflow-hidden shadow-2xl border-4 border-lime-500/30 bg-black/20 transform lg:rotate-1 hover:rotate-0 transition-transform duration-500">
-                    <iframe src={CONFIG.videoEmbed} frameBorder="0" width="100%" height="100%" allow="autoplay; fullscreen" allowFullScreen={true} className="absolute top-0 left-0 w-full h-full"></iframe>
+                    {
+                        // Many browsers block autoplay unless the media is muted. Append autoplay and mute params to the embed URL.
+                    }
+                    {(() => {
+                        const sep = CONFIG.videoEmbed.includes('?') ? '&' : '?';
+                        const videoSrc = `${CONFIG.videoEmbed}${sep}autoplay=1&mute=1`;
+                        return (
+                            <div className="absolute top-0 left-0 w-full h-full">
+                                <iframe title="VMSE Improve video" src={videoSrc} frameBorder="0" width="100%" height="100%" allow="autoplay; fullscreen; encrypted-media" allowFullScreen={true} className="absolute top-0 left-0 w-full h-full" />
+                                <div className="absolute bottom-3 left-3 z-20 p-2 bg-black/60 text-white text-sm rounded">
+                                    <a href={CONFIG.videoShare || CONFIG.videoEmbed} target="_blank" rel="noopener noreferrer" className="underline">Open video in Google Drive (sign in / enable Google cookies)</a>
+                                </div>
+                            </div>
+                        );
+                    })()}
                 </div>
             </div>
             <div className="absolute right-0 bottom-0 opacity-10 transform translate-y-1/4 translate-x-1/4 text-white pointer-events-none">
@@ -179,11 +193,23 @@ const SupportSection = () => (
             <SupportCard title="Downloads" icon={<Icons.Download size={24} />} links={SUPPORT_LINKS.downloads} />
             <SupportCard title="Help & Incidents" icon={<Icons.HelpCircle size={24} />} links={SUPPORT_LINKS.help} />
         </div>
-        <div className="bg-lime-50 border border-lime-200 rounded-xl p-6 mt-8">
+            <div className="bg-lime-50 border border-lime-200 rounded-xl p-6 mt-8">
             <h3 className="text-lg font-bold text-lime-900 mb-2">Technical Contacts</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-lime-800">
-                <div><p className="font-semibold">System Owner:</p><p>Iris Shih</p></div>
-                <div><p className="font-semibold">Technical Experts:</p><p>Kamil Jaworski, Grzegorz Klaczak</p></div>
+                <div>
+                    <p className="font-semibold">System Owner:</p>
+                    <p>
+                        <a href="mailto:iris.shih@roche.com" className="text-lime-700 underline">Iris Shih</a>
+                    </p>
+                </div>
+                <div>
+                    <p className="font-semibold">Technical Experts:</p>
+                    <p>                       
+                        <a href="mailto:vmse-improve-support@roche.com" className="text-lime-700 underline">Kamil Jaworski</a>
+                        <span className="mx-2">.</span>
+                        <a href="mailto:vmse-improve-support@roche.com" className="text-lime-700 underline">Grzegorz Klaczak</a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
