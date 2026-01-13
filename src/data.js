@@ -60,19 +60,20 @@ const INTEGRATION_DATA = {
 
 const SUPPORT_LINKS = {
     access: [
-        { label: "Request Improve Access (CIDM)", href: "#" },
-        { label: "Request 3rd-Party Software License", href: "#" },
+        { label: "Request Improve Access (CIDM)", href: "https://rochewiki.roche.com/confluence/spaces/DASApplications/pages/477481837/Request+Improve+access" },
+        { label: "Request 3rd-Party Software License", href: "https://roche.service-now.com/rose?id=sc_cat_item&sys_id=8287a4f6db3f88d0bd21f687f49619a5" },
         { label: "Request sHPC (modsim) Access", href: "#" }
     ],
     training: [
-        { label: "Cornerstone Trainings", href: "#" },
-        { label: "Improve Wiki / gSite", href: "#" },
-        { label: "Improve Client FAQ", href: "#" }
+        { label: "Cornerstone Trainings", href: "https://roche.csod.com/ui/lms-learning-details/app/course/024e3e2b-9340-4485-afb9-6e1af4368dc4" },
+        { label: "Improve Wiki / gSite", href: "https://rochewiki.roche.com/confluence/spaces/DASApplications/pages/474558571/VMSE+Improve" },
+        { label: "Improve Client FAQ", href: "https://rochewiki.roche.com/confluence/spaces/DASApplications/pages/515787367/Improve+client+FAQ" }
     ],
     downloads: [
-        { label: "Improve Client v4.3.4-1 (Windows)", href: "#" },
+        { label: "Improve Client v4.3.4-1 (Windows)", href: "https://drive.google.com/file/d/1NGEFZDKDYVOQoBjjVGl5iabkGpdwlfUA/view?usp=drive_link" },
         { label: "Improve Client v4.3.4-1 (MAC)", href: "#" },
-        { label: "Improve CLI (Windows/Linux/Mac)", href: "#" }
+        { label: "Improve CLI (Windows)", href: "https://drive.google.com/file/d/1swelV9D_0PI8h1wQySbQ3pc3cp_I0rjt/view?usp=drive_link" },
+        { label: "Improve CLI (Linux/Mac)", href: "https://drive.google.com/file/d/1p5B9ll4qwmoGi9m0oJTnb3Rf0LUiOeyj/view?usp=drive_link" }
     ],
     help: [
         { label: "Report an Incident (ServiceNow)", href: "https://roche.service-now.com/rose?id=sc_cat_item_guide&sys_id=bc98c4c71b440910311931da9b4bcb94" },
